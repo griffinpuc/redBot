@@ -1,3 +1,6 @@
+#Reddit chatbot made by griffinpuc
+#GitHub: https://github.com/griffinpuc
+
 from weather import Weather, Unit
 import redBot
 import praw
@@ -39,6 +42,4 @@ def getweather(submission, message):
             if x["cod"] != "404": 
                 z = x["weather"] 
                 y = x["main"] 
-                submission.reply("Hello! In " + city_name + " it is currently " +
-                                 str(z[0]["description"]) + " and is " +
-                                 str(((y["temp"] - 273.15)* 1.8) + 35) + " degrees F.")
+                submission.reply("Hello! In " + city_name + " it is currently " + str(z[0]["description"]) + " and is " + str(((y["temp"] - 273.15)* 1.8) + 35) + " degrees F.")
