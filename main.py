@@ -25,6 +25,16 @@ class printout:
         print("[redBot]: " + self.info + " " + self.ID + " title: " + self.post)
 
 
+class process:
+    def __init__(self, key, blacklist, message):
+        self.key = key
+        self.blacklist = blacklist
+        self.message = message
+
+    def run(self):
+        scansub(self.key, self.blacklist, self.message)
+
+
 def setup():
 
     if not os.path.isfile(path):
@@ -46,7 +56,7 @@ def writeblacklist(posts_replied_to):
 
 def writepost(submission, message):
     
-    submission.reply("This post contains the word TEST!")
+    submission.reply(message)
 
     info = printout("REPLIED TO", submission.id, submission.title)
     info.console()
@@ -64,5 +74,15 @@ def scansub(key, blacklist, message):
                     blacklist.append(submission.id)
                     writeblacklist(blacklist)
 
-blacklist = setup()
-scansub()
+
+def main():
+    blacklist = setup()
+
+    pr1 = process("i love python", blacklist, "i love python too!")
+
+    print("Running processes...")
+
+    while True:
+        pr1.run()
+
+main()
