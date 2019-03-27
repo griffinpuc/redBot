@@ -1,5 +1,6 @@
 #Reddit chatbot made by griffinpuc
 #GitHub: https://github.com/griffinpuc
+# :)
 
 from time import gmtime, strftime
 import praw
