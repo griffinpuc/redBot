@@ -15,3 +15,6 @@ Reddit chatbot with various actions including image recognition
 
 *Bot's reply*
 ![car](https://i.imgur.com/Os4WaJl.png)
+
+*Client-side logs with detailed real-time bot information*
+![console](https://i.imgur.com/lckb5Px.png)
