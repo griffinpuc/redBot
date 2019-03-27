@@ -1,12 +1,14 @@
 #Reddit chatbot made by griffinpuc
 #GitHub: https://github.com/griffinpuc
 
+from time import gmtime, strftime
 import praw
 import pdb
 import re
 import os
-from time import gmtime, strftime
 import ast
+import sys
+import time
 
 class main():
 
@@ -54,6 +56,10 @@ class main():
         self.actions[name] = action
         self.console("addaction", str(action), name)
 
+    def restart_line(self):
+        sys.stdout.write('\r')
+        sys.stdout.flush()
+
     def console(self, call, info, data):
         time = strftime("%H:%M:%S", gmtime())
         if call == "createpost":
@@ -62,3 +68,5 @@ class main():
             print(time + "[redBot]: {" + call + " " + info + "} " + "ADDED PROCESS [" + data + "]")
         if call == "addaction":
             print(time + "[redBot]: {" + call + " " + info + "} " + "ADDED ACTION [" + data + "]")
+        if call == "possibleaction":
+            print(time + "[redBot]: {" + call + " " + info + "} " + "POSSIBLE ACTION FOUND [" + data + "]")
