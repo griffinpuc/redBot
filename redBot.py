@@ -42,12 +42,13 @@ class main():
         blacklist = self.setup(process.path)
         for submission in process.subreddit.hot(limit=5):
                 if submission.id not in blacklist:
-                    if (re.search(process.key, submission.title, re.IGNORECASE)):
-                        process.action(submission, process.message)
-                        blacklist.append(submission.id)
-                        with open(process.path, 'w') as f:
-                            f.write(str(blacklist))
-                            f.close()
+                    if (re.search("redbot", submission.title, re.IGNORECASE)):
+                        if (re.search(process.key, submission.title, re.IGNORECASE)):
+                            process.action(submission, process.message)
+                            blacklist.append(submission.id)
+                            with open(process.path, 'w') as f:
+                                f.write(str(blacklist))
+                                f.close()
 
     def addprocess(self, process):
         self.processes.append(process)
