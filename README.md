@@ -1,7 +1,7 @@
 # redBot
 ### A python reddit chatbot
 
-Reddit chatbot with various actions including image recognition 
+Reddit chatbot with various actions including image recognition. Fun side project to learn how to code a reddit bot- may be added to in the future but no promises.
 
 ### Current capabilities:
 - [x] Reply to basic messages of your choosing
